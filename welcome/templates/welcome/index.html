@@ -1,0 +1,51 @@
+{% extends "welcome/navbar.html" %}
+<title> Welcome! </title>
+{% block homeElement %}
+<li class="nav-item active">
+  <div class="itemsnavbartext">
+    <a class="nav-link" href="/welcome">Home <span class="sr-only">(current)</span></a>
+  </div>
+  </li>
+{% endblock %}
+{% block bodytag %}
+<body class="pagebg" onload="document.body.style.opacity='1'; ">
+{% endblock %}
+{% block body %}
+
+<div class="content">
+
+<p>
+  <strong>Welcome!</strong></p>
+
+<p>Please chooose from the options above.</p>
+
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+
+<div class="footer">
+  <div class="footercontent">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"><strong>Home</strong></li>
+
+    </ol>
+  </nav>
+  <div class="footerinfo">
+    <p >Made with Django @4.1.2 </p>
+  </div>
+
+      
+      
+
+ 
+</div>
+
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,101 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_javascript %}
+{% bootstrap_css %}
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">  </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+</head>
+{% block bodytag %}
+<body class="pagebbg">
+{% endblock %}
+<link rel="stylesheet" href="{% static 'welcome/style.css' %}">
+<div class="navbbg">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="dropdown">
+    <button onclick="ShowDropdown()" class="dropbtn">Language</button>
+      <div id="myDropdown" class="dropdown-content">
+      <a  href="https://diosroland.site">
+        <img src="{% static 'welcome/gb.svg' %}" alt=":gbflag:" width="16" height="16"> English
+      </a>
+      <a href="https://hu.diosroland.site">
+        <img src="{% static 'welcome/hu.svg' %}" alt=":huflag:" width="16" height="16"> Hungarian
+      </a>
+      <a href="https://de.diosroland.site">
+        <img src="{% static 'welcome/de.svg' %}" alt=":deflag:" width="16" height="16"> German
+      </a>
+    </div>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navtexxt navbar-nav mr-auto">
+      {% block homeElement %}
+      <li class="navbaronhover nav-item active">
+        <div class="itemsnavbartext">
+        <a class="itemsnavbar nav-link" href="/welcome">Home <span class="sr-only"></span></a>
+        </div>
+      </li>
+      {% endblock %}
+      <li class="navbaronhover nav-item">
+        <div class="itemsnavbartext">
+        <a class="itemsnavbar nav-link" href="/admin">Admin</a>
+        </div>
+      </li>
+      <li class="navbaronhover nav-item">
+        <div class="itemsnavbartext">
+        <a class="itemsnavbar nav-link" href="/cv">CV</a>
+        </div>
+      </li>
+      <li class="navbaronhover nav-item">
+        <div class="itemsnavbartext">
+        <a class="itemsnavbar nav-link" href="/projects">My Projects</a>
+        </div>
+      </li>
+      
+      </li>
+    </ul>
+    <span class="navbar-text">
+      
+    </span>
+    
+    
+  </div>
+  </div>
+</nav>
+</div>
+
+
+</div>
+<script>
+  /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function ShowDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+{% block body %}{% endblock %}
+</body>
+{% block footer %}{% endblock %}
