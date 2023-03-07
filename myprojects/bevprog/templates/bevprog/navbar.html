@@ -1,0 +1,200 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_javascript %}
+{% bootstrap_css %}
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.2.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">  </script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="robots" content="noindex">
+</head>
+{% block bodytag %}
+<body class="pagebbg">
+{% endblock %}
+
+    
+<link rel="stylesheet" href="{% static 'bevprog/style.css' %}">
+<div class="navbbg">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="dropdown">
+      <button onclick="ShowDropdown()" class="dropbtn">Language</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a  href="https://diosroland.site/projects">
+          <img src="{% static 'bevprog/gb.svg' %}" alt=":gbflag:" width="16" height="16"> English
+        </a>
+        
+        <a href="https://hu.diosroland.site/projects">
+          <img src="{% static 'bevprog/hu.svg' %}" alt=":huflag:" width="16" height="16"> Hungarian
+        </a>
+        <a href="https://de.diosroland.site/projects">
+          <img src="{% static 'bevprog/de.svg' %}" alt=":deflag:" width="16" height="16"> German
+        </a>
+      </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" style="z-index: 999;" id="navbarText">
+      <ul class="navtexxt navbar-nav mr-auto">
+
+        <li class="navbaronhover nav-item">
+          <div class="itemsnavbartext">
+          <a class="itemsnavbar nav-link" href="/welcome">Home <span class="sr-only"></span></a>
+          </div>
+        </li>
+
+        <li class="navbaronhover nav-item">
+          <div class="itemsnavbartext">
+          <a class="itemsnavbar nav-link" href="/admin">Admin</a>
+          </div>
+        </li>
+        <li class="navbaronhover nav-item">
+          <div class="itemsnavbartext">
+          <a class="itemsnavbar nav-link" href="/cv">CV</a>
+          </div>
+        </li>
+        {% block MyprojectElement %}
+        <li class="navbaronhover nav-item">
+          <a class="itemsnavbar nav-link" href="/projects">My Projects</a>
+        </li>
+        {% endblock %}
+        
+        </li>
+      </ul>
+      <span class="navbar-text">
+        
+      </span>
+      
+      
+    </div>
+    </div>
+  </nav>
+  </div>
+  
+  
+  </div>
+  <script>
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function ShowDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
+  
+  {% block body %}{% endblock %}
+  <div class="sidebar" style="z-index: 9999;">
+    <div class="card" style="z-index: 999;">
+        <br>
+         <br>
+        <li>
+          <a class="expand"  href="angularproject">Angular Multitool</a>
+        </li> 
+        <li>
+          <a class="expand" href="thisproject">This Django Project</a>
+        </li>
+        <li>
+          <a class="expand" style="color:#309688 !important" href="bevprog">Income Calculator</a>
+        </li>
+        <li>
+          <a class="expand" href="extofirebase">Excel-to-Firebase upload</a>
+        </li>
+        <li>
+            <a class="expand" href="pocsajseo">Pocsaj.hu SEO</a>
+        </li>
+    </div>
+  </div>
+  <div  class="w3-sidebar w3-bar-block w3-black w3-xxlarge PhoneSideBar"><a href="/welcome" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
+    <a href="/cv" class="w3-bar-item w3-button"><i class="fa fa-id-card"></i></a>
+    <a href="/projects" class="w3-bar-item w3-button"><i class="fa fa-code"></i></a> 
+    <a href="/admin" class="w3-bar-item w3-button"><i class="fa fa-key"></i></a>
+    <a style="font-size: 15px; padding-left: 4px;"> projects:<a>
+      <a href="angularproject" class="w3-bar-item w3-button"><i class="fa fa-wrench"></i></a>
+      <a href="thisproject" class="w3-bar-item w3-button"><i class="fa fa-hand-o-down"></i></a>
+      <a href="bevprog" class="w3-bar-item w3-button"><i class="fa fa-dollar"></i></a>
+      <a href="extofirebase" class="w3-bar-item w3-button"><i class="fa fa-cloud-upload"></i></a>
+      <a href="pocsajseo" class="w3-bar-item w3-button"><i class="fa fa-google"></i></a>
+      <a style="font-size: 12px; padding-left: 4px;"> Language:<a></a>
+    <a href="https://de.diosroland.site/projects" class="w3-bar-item w3-button"><img src="{% static 'bevprog/de.svg' %}" alt=":deflag:" width="32" height="32" style="border-radius: 20px;"></a>
+    <a href="https://hu.diosroland.site/projects" class="w3-bar-item w3-button"><img src="{% static 'bevprog/hu.svg' %}" alt=":huflag:" width="32" height="32" style="border-radius: 20px;"></a>
+    <a href="https://diosroland.site/projects" class="w3-bar-item w3-button"><img src="{% static 'bevprog/gb.svg' %}" alt=":engflag:" width="32" height="32" style="border-radius: 20px;"></a>    
+  </div>
+  
+<div style="margin-left:20vw; margin-right: 5vw; margin-top: -25vh; overflow-wrap: break-word;">
+        <p>{{TtlTxt}}</p>
+        <p>The source code can be viewed <a href="https://github.com/bakenNNN/PyIncomeCalc/blob/main/bevetelprog.py">here</a></p>
+        <p>
+            {{header1}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/imports.png' %}" alt=":importsPicture:"/>
+        <p>
+          {{header2}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/firstpart.png' %}" alt=":FilesRead:"/>
+        <p>
+          {{header3}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/SaveAndLoad.png' %}" alt=":saveloadFunction:"/>
+        <p>
+          {{header4}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/layout1.png' %}" alt=":layoutCode:"/>
+        <p>
+          {{header5}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/bevprog1stscreen.png' %}" alt=":FirstScreen:"/>
+        <p> </p>
+        <img class="imgBox" src="{% static 'bevprog/variablesIn.png' %}" alt=":VariablesCode:"/>
+        <p>
+          {{header6}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/BevProgFlowchart.png' %}" alt=":Flowchart:"/>
+        <p>
+          {{header7}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/loops.png' %}" alt=":MainLoops:"/>
+        <p>
+          {{header8}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/bevprogtabla1.png' %}" alt=":Allrows:"/>
+        <p> </p>
+        <img class="imgBox" src="{% static 'bevprog/bevprogallcolumns.png' %}" alt=":Allcolumns:"/>
+        <p>The calculations: </p>
+        <img class="imgBox" src="{% static 'bevprog/Calc1.png' %}" alt=":AllCalculations:"/>
+        <p> </p>
+        <img class="imgBox" src="{% static 'bevprog/Calc2.png' %}" alt=":AllCalculations:"/>
+        <p>
+          {{header9}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/bevprogloadingscreen.png' %}" alt=":LoadingScreen:"/>
+        <p> </p>
+        <img class="imgBox" src="{% static 'bevprog/bevprogdone1.png' %}" alt=":DoneScreen:"/>
+        <p>
+          {{header10}}
+        </p>
+        <img class="imgBox" src="{% static 'bevprog/bevprogdone2.png' %}" alt=":DoneScreen2:"/>
+        <p> </p>
+        <img class="imgBox" src="{% static 'bevprog/bevprogdone3.png' %}" alt=":DoneScreen3:"/>
+</div>
+  </body>
+  {% block footer %}{% endblock %}
+  
