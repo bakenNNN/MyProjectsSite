@@ -1,0 +1,47 @@
+{% extends "thisproject/navbar.html" %}
+<title> Projects </title>
+
+{% block MyprojectElement %}
+<li class="navbaronhover nav-item active">
+  <div class="itemsnavbartext">
+  <a class="itemsnavbar nav-link" href="/projects">My Projects (current)</a>
+  </div>
+</li>
+{% endblock %}
+{% block bodytag %}
+<body class="pagebg" >
+{% endblock %}
+{% block body %}
+
+<div class="content">
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+<div class="footer">
+  <div class="footercontent">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><a href="/projects" style="text-decoration: none; color: pink;">Projects</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><strong>This Django project</strong></li>
+
+    </ol>
+  </nav>
+  <div class="footerinfo">
+    <p >Made with Django @4.1.2 </p>
+  </div>
+
+      
+      
+
+ 
+</div>
+
+</div>
+
+
+{% endblock %}
+
