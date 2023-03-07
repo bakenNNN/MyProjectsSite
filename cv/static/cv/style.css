@@ -1,0 +1,183 @@
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: '>';
+  }
+  .content{
+    padding-left:8vw;
+    padding-top:5vh;
+  }
+  .footer {
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  bottom: -2.7%;
+  height:8vh;
+  max-width: 100%;
+  width: 100vw;
+  background: rgb(17,15,47);
+  background: linear-gradient(90deg, rgba(17,15,47,1) 0%, rgba(9,9,121,1) 47%, rgba(16,116,136,1) 100%);
+  
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  color: white;
+  text-align: center;
+  }
+  
+  .footercontent{
+    box-sizing: border-box;
+    color:#ffffff;
+    padding-left:2vw;
+  }
+  .footerinfo{
+    text-align: right;
+    font-size: 10px;
+    padding-right:11vw;
+    margin:-3vh;
+  
+    
+  }
+  
+  
+  .content p {
+  text-align: center;
+  opacity: 0;
+  margin-top: 10vh;
+  color: aliceblue;
+  
+  
+  }
+  .content p:nth-child(1){
+  animation: change 2s ease-in-out forwards;
+  }
+  .content p:nth-child(2){
+  animation: change 2s ease-in-out forwards;
+  animation-delay: 2.5s;
+  }
+
+  
+  @keyframes change {
+  to {
+    opacity: 1
+  }
+  }
+  
+  .navbar {
+    border:3px solid darkgray;
+    
+    border-radius: 25px;
+    width: 96vw;
+    height: 7vh;
+    position:sticky;
+  
+    
+  
+    
+    
+  }
+  
+  .pagebg{
+    background-image: url(bckgrimg.jpg);
+    backdrop-filter: blur(8px);
+   
+  }
+  
+  
+  .navtexxt{
+    z-index: 900;
+  }
+  .itemsnavbartext:hover a{
+    background-color: rgba(211,211,211, 0.5);
+    border-radius: 30px;
+    backdrop-filter: grayscale(100%) blur(10px);
+    transition: .4s ease-in-out;
+  }
+  
+  
+  .itemsnavbar:hover{
+    color:black !important;
+    z-index: 1;
+  }
+  
+  
+  .navbbg{
+    position:sticky;
+    top:0.5vh; 
+    padding-top: 0.5vh;
+    padding-left:0.4vw;
+    left:1vw;
+    right:1vw;
+    content: '';
+    border-radius: 25px;
+  background: linear-gradient(15deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 800%;
+  width: 97vw;
+    height: 8vh;
+  animation: steam 60s linear infinite;
+  }
+  
+  
+  @keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+  }
+  .dropbtn {
+    background-color: #c44817;
+      color: white;
+      top:5px;
+      min-width: 2vw;
+      min-height: 2vh;
+      font-size: 1.2vw;
+      border-radius: 30px;
+      cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #50220c;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 20px;
+    min-width: 15vw;
+    min-height: 10vh;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-radius: 20px;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+  
+  
+  
+  
+  
